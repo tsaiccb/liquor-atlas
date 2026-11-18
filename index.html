@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>酒典 Liquor Atlas｜13 酒種推薦酒款、台灣比價與調酒指南</title>
+<meta name="description" content="威士忌、葡萄酒、香檳、清酒、白酒高粱、白蘭地、琴酒、蘭姆、龍舌蘭、伏特加、啤酒、燒酎梅酒、利口酒：各酒種推薦酒款的風味與規格、國外與台灣售價、台灣最便宜通路連結，以及調酒指南與個人飲用紀錄。">
+<meta name="theme-color" content="#f6f1ea" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#14110f" media="(prefers-color-scheme: dark)">
+<meta name="robots" content="noindex">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="酒典">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="icon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&family=Noto+Serif+TC:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css?v=202611182329">
+</head>
+<body>
+<header class="masthead">
+  <div class="wrap">
+    <a class="brand" id="brand" href="#/"><b>酒典</b><span>Liquor Atlas</span></a>
+    <nav class="mast-actions" aria-label="功能">
+      <a class="mast-btn" id="nav-cellar" data-route="cellar" href="#/cellar"><span class="sync-dot" id="sync-dot" data-s="off"></span>我的酒櫃 <span class="count num" id="cellar-count" hidden>0</span></a>
+      <a class="mast-btn" id="nav-about" data-route="about" href="#/about">資料說明</a>
+    </nav>
+  </div>
+</header>
+<nav class="cat-nav" aria-label="酒種"><div class="wrap" id="cat-tabs"></div></nav>
+
+<main id="view"><div class="wrap"><div class="skeleton">載入中…</div></div></main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <p class="warn">禁止酒駕　飲酒過量有礙健康　未滿十八歲請勿飲酒</p>
+    <p>排名為編輯推薦排序；酒款資料與價格僅供參考，實際售價、庫存、年份與規格請以店家與酒標為準。<a class="linkish" href="#/about">資料說明</a></p>
+  </div>
+</footer>
+
+<div class="scrim" id="scrim" hidden></div>
+<aside class="drawer" id="drawer" role="dialog" aria-modal="true" aria-labelledby="drawer-title" hidden>
+  <div class="drawer-head"><span class="crumb" id="drawer-crumb"></span><button class="x" id="drawer-close" aria-label="關閉">✕</button></div>
+  <div class="drawer-body" id="drawer-body"></div>
+</aside>
+
+<div class="gate" id="gate" role="dialog" aria-modal="true" aria-labelledby="gate-title" hidden>
+  <div class="box">
+    <h2 id="gate-title">請確認年齡</h2>
+    <p>本站內容為酒類資訊，僅供已滿 18 歲者瀏覽。<br>禁止酒駕，飲酒過量有礙健康。</p>
+    <div class="acts"><button class="btn" id="gate-no">我未滿 18 歲</button><button class="btn primary" id="gate-yes">我已滿 18 歲</button></div>
+  </div>
+</div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script src="app.js?v=202611182329" defer></script>
+</body>
+</html>

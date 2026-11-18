@@ -1,0 +1,9 @@
+{
+  "name": "酒典 Liquor Atlas",
+  "short_name": "酒典",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#f6f1ea",
+  "theme_color": "#2a1a10",
+  "icons": [{ "src": "icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }]
+}
