@@ -379,7 +379,7 @@
       twHTML = `<div class="best"><div><div class="p num"><small>NT$</small>${fmt(o.price)}</div>
           <div class="w">${esc(pfName(o.pf))}${o.note ? '・' + esc(o.note) : ''}${badge(tw.status)}</div></div>
           <a class="btn primary" href="${esc(safeUrl(o.url))}" target="_blank" rel="noopener noreferrer">前往商品頁</a></div>
-        <p class="callout" style="margin-top:10px">${{ v: '已逐一比對店家目錄中的商品名稱與規格', w: '這支酒不在已蒐集的店家目錄中；價格來自網路搜尋，並由程式確認該金額出現在來源頁面的這支酒品名旁，但未逐一核對容量、版本與是否為現行售價', s: '這個價格來自網路搜尋摘要，未能在來源頁面上確認，僅供參考', a: '由程式依品名自動比對，尚未逐一確認' }[tw.status] || ''}；查價日期 ${esc(tw.date || '')}。這是已搜尋平台中的最低公開標價，實際售價、庫存與年份批次請以店家為準。${(tw.status === 'w' || tw.status === 's') && tw.remark ? '<br>查價備註：' + esc(tw.remark) : ''}</p>
+        <p class="callout" style="margin-top:10px">${{ v: '已逐一比對店家目錄中的商品名稱與規格', w: '這支酒不在已蒐集的店家目錄中；價格來自網路搜尋，並由程式確認該金額出現在來源頁面的這支酒品名旁，但未逐一核對容量、版本與是否為現行售價', s: '這個價格來自網路搜尋摘要，程式無法在來源頁面上確認它就是這支酒的價格，僅供參考', a: '由程式依品名自動比對，尚未逐一確認' }[tw.status] || ''}；查價日期 ${esc(tw.date || '')}。這是已搜尋平台中的最低公開標價，實際售價、庫存與年份批次請以店家為準。${(tw.status === 'w' || tw.status === 's') && tw.remark ? '<br>查價備註：' + esc(tw.remark) : ''}</p>
         ${tw.offers.length > 1 || askRows ? `<table class="offers"><tbody>${tw.offers.map(x => `<tr><td>${esc(pfName(x.pf))}${x.note ? `<span class="muted">・${esc(x.note)}</span>` : ''}<span class="nm">${esc(x.name || '')}</span></td><td>NT$${fmt(x.price)}</td><td><a href="${esc(safeUrl(x.url))}" target="_blank" rel="noopener noreferrer">商品頁</a></td></tr>`).join('')}${askRows}</tbody></table>` : ''}`;
     } else {
       const why = !b.tw ? '這支酒尚未查證台灣售價。' : b.tw.status === 'c' ? '已比對各平台商品目錄，沒有收錄這支酒；尚未另做網路搜尋。' : '已比對各平台目錄並上網搜尋，沒有找到公開標價（可能未進口、缺貨或僅門市詢價）。';
@@ -690,7 +690,7 @@ ${b.pending ? `<section class="sec"><h3>酒款資料</h3><dl class="facts">${fac
         <li><b>已查證</b>：逐一比對過台灣店家目錄中的商品名稱與規格，顯示已搜尋平台中的最低公開標價與連結。</li>
         <li><b>自動比對</b>：程式依品名從店家目錄嚴格比對出來，尚未逐一確認，仍可能配錯版本、年份或容量。</li>
         <li><b>網路查價</b>：店家目錄裡沒有的酒款，另外上網搜尋；程式確認過該金額出現在來源頁面的品名旁，但沒有逐一核對容量與版本。</li>
-        <li><b>搜尋結果</b>：價格來自網路搜尋摘要，未能在來源頁面上確認。</li>
+        <li><b>搜尋結果</b>：價格來自網路搜尋摘要，程式無法在來源頁面上確認它就是這支酒的價格。</li>
         <li><b>未查／未查到</b>：尚未查價，或沒有找到公開標價；可用各平台搜尋連結自行查詢。</li>
         <li><b>國外參考價</b>：整理的約略行情，未逐筆查證；新台幣換算僅為匯率換算（${esc(m.fxDate || '')}），不含關稅與酒稅。</li>
         <li>目前有台灣售價的酒款：${fmt(priced)} 支。查價日期見各酒款頁；價格會變動。</li></ul></section>
